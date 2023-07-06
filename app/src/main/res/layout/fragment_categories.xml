@@ -11,7 +11,8 @@
         android:text="pick your category of interest"
         android:textSize="22sp"
         android:textStyle="bold"
-        />
+        android:padding="8dp"
+        android:textColor="@color/black" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categories_recycler"
         android:layout_width="match_parent"
