@@ -24,4 +24,4 @@ data class Source(
 
 	@field:SerializedName("url")
 	val url: String? = null
-)
+) : java.io.Serializable

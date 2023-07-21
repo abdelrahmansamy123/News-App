@@ -15,11 +15,11 @@ class NewsViewModel : ViewModel() {
     val showLoading = MutableLiveData<Boolean>()
     val showError = MutableLiveData<String>()
     val newsList = MutableLiveData<List<News?>?>()
-    fun getNews(sourceId: String) {
+    fun getNews(sourceId: String, pageSize: Int, page: Int) {
         showLoading.value = true
         ApiManager
             .getApis()
-            .getNews(ApiConstants.apiKey, sourceId)
+            .getNews(ApiConstants.apiKey, sources = sourceId, pageSize = pageSize, page = page)
             .enqueue(object : Callback<NewsResponse> {
                 override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
                     showError.value = t.localizedMessage

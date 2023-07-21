@@ -3,15 +3,15 @@ package com.route.news_app.news
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.route.news_app.R
 import com.route.news_app.databinding.ItemNewsBinding
 import com.route.news_app.newsResponse.News
 
 class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
-    class ViewHolder (val viewBinding:ItemNewsBinding) : RecyclerView.ViewHolder(viewBinding.root){
-        fun bind(news: News?){
+    var onNewsClick: OnNewsClick? = null
+
+    class ViewHolder(val viewBinding: ItemNewsBinding) : RecyclerView.ViewHolder(viewBinding.root) {
+        fun bind(news: News?) {
             viewBinding.news = news
             viewBinding.invalidateAll()
         }
@@ -27,13 +27,25 @@ class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.Vi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items?.get(position)
         holder.bind(item)
+        if (onNewsClick != null) {
+            holder.itemView.rootView.setOnClickListener {
+                onNewsClick?.onItemClick(item)
+            }
+        }
 
     }
 
-    override fun getItemCount(): Int = items?.size?:0
+    override fun getItemCount(): Int = items?.size ?: 0
     fun changeData(articles: List<News?>?) {
         items = articles
         notifyDataSetChanged()
+
+    }
+}
+
+interface OnNewsClick {
+
+    fun onItemClick(news: News?) {
 
     }
 }
