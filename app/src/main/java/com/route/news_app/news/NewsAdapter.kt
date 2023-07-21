@@ -11,6 +11,10 @@ import com.route.news_app.newsResponse.News
 class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     class ViewHolder (val viewBinding:ItemNewsBinding) : RecyclerView.ViewHolder(viewBinding.root){
+        fun bind(news: News?){
+            viewBinding.news = news
+            viewBinding.invalidateAll()
+        }
 
     }
 
@@ -21,14 +25,9 @@ class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.Vi
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val items = items?.get(position)
-        holder.viewBinding.author.text =  items?.author
-        holder.viewBinding.title.text =  items?.title
-        holder.viewBinding.time.text =  items?.publishedAt
-        Glide.with(holder.itemView)
-            .load(items?.urlToImage)
-            .placeholder(R.drawable.ic_image)
-            .into(holder.viewBinding.image)
+        val item = items?.get(position)
+        holder.bind(item)
+
     }
 
     override fun getItemCount(): Int = items?.size?:0
