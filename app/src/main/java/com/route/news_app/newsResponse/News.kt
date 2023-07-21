@@ -28,4 +28,4 @@ data class News(
 
 	@field:SerializedName("content")
 	val content: String? = null
-)
+) : java.io.Serializable

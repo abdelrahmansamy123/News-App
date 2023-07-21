@@ -1,5 +1,8 @@
 package com.route.news_app
 
+import android.content.Intent
+import android.net.Uri
+import android.view.View
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -14,13 +17,25 @@ fun loadImageFromUrl(imageView : ImageView, url : String){
         .into(imageView)
 
 }
+
 @BindingAdapter("cardColor")
-fun changeCardBackgroundColor(cardView: CardView, colorId:Int){
+fun changeCardBackgroundColor(cardView: CardView, colorId: Int) {
     cardView.setCardBackgroundColor(
-        ContextCompat.getColor(cardView.context,colorId)
+        ContextCompat.getColor(cardView.context, colorId)
     )
 }
+
 @BindingAdapter("imageId")
-fun changeImageWithByResourceId(imageView: ImageView, resId:Int){
+fun changeImageWithByResourceId(imageView: ImageView, resId: Int) {
     imageView.setImageResource(resId)
+}
+
+@BindingAdapter("launchUrl")
+fun launchUrl(view: View, url: String) {
+    view.setOnClickListener {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        view.context.startActivity(browserIntent)
+
+
+    }
 }
