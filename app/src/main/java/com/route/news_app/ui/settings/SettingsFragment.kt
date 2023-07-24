@@ -1,4 +1,4 @@
-package com.route.news_app.settings
+package com.route.news_app.ui.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater

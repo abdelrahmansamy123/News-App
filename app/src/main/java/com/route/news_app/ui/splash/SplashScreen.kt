@@ -1,4 +1,4 @@
-package com.route.news_app.splash
+package com.route.news_app.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.route.news_app.R
-import com.route.news_app.main.MainActivity
+import com.route.news_app.ui.main.MainActivity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

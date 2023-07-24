@@ -1,4 +1,4 @@
-package com.route.news_app.main
+package com.route.news_app.ui.main
 
 
 import android.os.Bundle
@@ -6,11 +6,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.route.news_app.R
-import com.route.news_app.categories.CategoriesFragment
-import com.route.news_app.categories.Category
-import com.route.news_app.categoryDetails.CategoryDetailsFragment
 import com.route.news_app.databinding.ActivityMainBinding
-import com.route.news_app.settings.SettingsFragment
+import com.route.news_app.ui.categories.CategoriesFragment
+import com.route.news_app.ui.categories.Category
+import com.route.news_app.ui.categoryDetails.CategoryDetailsFragment
+import com.route.news_app.ui.settings.SettingsFragment
 
 
 class MainActivity : AppCompatActivity() , CategoriesFragment.OnCategoryClickListener{

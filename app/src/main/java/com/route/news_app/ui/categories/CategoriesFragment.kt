@@ -1,4 +1,4 @@
-package com.route.news_app.categories
+package com.route.news_app.ui.categories
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,13 +22,14 @@ class CategoriesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewBinding.categoriesRecycler.adapter = adapter
-        adapter.onItemClickListener = object :CategoriesRecyclerAdapter.OnItemClickListener{
+        adapter.onItemClickListener = object : CategoriesRecyclerAdapter.OnItemClickListener {
             override fun onItemClick(pos: Int, item: Category) {
                 onCategoryClickListener?.onCategoryClick(item)
             }
         }
     }
-    var onCategoryClickListener:OnCategoryClickListener?=null
+
+    var onCategoryClickListener: OnCategoryClickListener? = null
     interface OnCategoryClickListener{
         fun onCategoryClick(category: Category)
     }

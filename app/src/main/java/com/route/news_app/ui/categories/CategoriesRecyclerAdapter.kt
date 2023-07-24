@@ -1,8 +1,7 @@
-package com.route.news_app.categories
+package com.route.news_app.ui.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.route.news_app.databinding.ItemCategoryBinding
 
@@ -28,7 +27,7 @@ class CategoriesRecyclerAdapter(val items:List<Category>)
     override fun getItemCount(): Int  = items.size
     var onItemClickListener: OnItemClickListener?=null
     interface OnItemClickListener{
-        fun onItemClick(pos:Int,item:Category)
+        fun onItemClick(pos: Int, item: Category)
     }
 
     class ViewHolder(val itemBinding:ItemCategoryBinding)

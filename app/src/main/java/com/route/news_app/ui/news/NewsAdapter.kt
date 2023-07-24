@@ -1,10 +1,10 @@
-package com.route.news_app.news
+package com.route.news_app.ui.news
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.route.news_app.api.model.newsResponse.News
 import com.route.news_app.databinding.ItemNewsBinding
-import com.route.news_app.newsResponse.News
 
 class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 

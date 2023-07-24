@@ -1,4 +1,4 @@
-package com.route.news_app.categoryDetails
+package com.route.news_app.ui.categoryDetails
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayout
 import com.route.news_app.R
-import com.route.news_app.categories.Category
+import com.route.news_app.api.model.sourcesResponse.Source
 import com.route.news_app.databinding.FragmentDetailsCategoryBinding
-import com.route.news_app.news.NewsFragment
-import com.route.news_app.sourcesResponse.Source
+import com.route.news_app.ui.categories.Category
+import com.route.news_app.ui.news.NewsFragment
 
 class CategoryDetailsFragment : Fragment() {
     lateinit var viewBinding: FragmentDetailsCategoryBinding

@@ -7,14 +7,14 @@
 
         <variable
             name="news"
-            type="com.route.news_app.newsResponse.News" />
+            type="com.route.news_app.api.model.newsResponse.News" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".newsDetails.NewsDetailsActivity">
+        tools:context=".ui.newsDetails.NewsDetailsActivity">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/image"

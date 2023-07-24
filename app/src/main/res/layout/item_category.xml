@@ -6,7 +6,7 @@
     <data>
         <variable
             name="category"
-            type="com.route.news_app.categories.Category" />
+            type="com.route.news_app.ui.categories.Category" />
 
     </data>
 

@@ -1,7 +1,7 @@
-package com.route.news_app.newsResponse
+package com.route.news_app.api.model.newsResponse
 
 import com.google.gson.annotations.SerializedName
-import com.route.news_app.sourcesResponse.Source
+import com.route.news_app.api.model.sourcesResponse.Source
 
 data class News(
 

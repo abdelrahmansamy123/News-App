@@ -1,13 +1,15 @@
-package com.route.news_app.news
+package com.route.news_app.ui.news
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
-import com.route.news_app.api.ApiConstants
 import com.route.news_app.api.ApiManager
-import com.route.news_app.newsResponse.News
-import com.route.news_app.newsResponse.NewsResponse
+import com.route.news_app.api.model.newsResponse.News
+import com.route.news_app.api.model.newsResponse.NewsResponse
+import com.route.news_app.repositories.news.NewsRemoteDataSourceImpl
+import com.route.news_app.repositories.news.NewsRepositoryImpl
+import com.route.news_app.repositoriesContract.news.NewsRepository
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
@@ -15,19 +17,15 @@ class NewsViewModel : ViewModel() {
     val showLoading = MutableLiveData<Boolean>()
     val showError = MutableLiveData<String>()
     val newsList = MutableLiveData<List<News?>?>()
+    val webServices = ApiManager.getApis()
+    val newsRemoteDataSource = NewsRemoteDataSourceImpl(webServices)
+    val newsRepo: NewsRepository = NewsRepositoryImpl(newsRemoteDataSource)
     fun getNews(sourceId: String, pageSize: Int, page: Int) {
         showLoading.value = true
         viewModelScope.launch {
             try {
-                val serverData = ApiManager
-                    .getApis()
-                    .getNews(
-                        ApiConstants.apiKey,
-                        sources = sourceId,
-                        pageSize = pageSize,
-                        page = page
-                    )
-                newsList.value = serverData.articles
+                val news = newsRepo.getNewsBySourceId(sourceId, page, pageSize)
+                newsList.value = news
                 showLoading.value = false
             } catch (t: HttpException) {
                 val errorResponse = Gson().fromJson(

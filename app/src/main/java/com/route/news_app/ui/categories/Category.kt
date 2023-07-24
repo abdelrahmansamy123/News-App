@@ -1,4 +1,4 @@
-package com.route.news_app.categories
+package com.route.news_app.ui.categories
 
 import com.route.news_app.R
 
@@ -29,18 +29,19 @@ data class Category (val id:String,
                     backgroundColorId = R.color.pink
                 ),
                 Category(
-                    id ="business",
+                    id = "business",
                     name = "Business",
                     imageId = R.drawable.business,
                     backgroundColorId = R.color.orange
                 ),
                 Category(
-                    id ="technology",
+                    id = "technology",
                     name = "Technology",
                     imageId = R.drawable.enviroment,
                     backgroundColorId = R.color.babyBlue
-                ),Category(
-                    id ="science",
+                ),
+                Category(
+                    id = "science",
                     name = "Science",
                     imageId = R.drawable.science,
                     backgroundColorId = R.color.yellow

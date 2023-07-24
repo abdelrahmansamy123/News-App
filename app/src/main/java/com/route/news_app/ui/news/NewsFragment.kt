@@ -1,4 +1,4 @@
-package com.route.news_app.news
+package com.route.news_app.ui.news
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,10 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.route.news_app.api.model.newsResponse.News
+import com.route.news_app.api.model.sourcesResponse.Source
 import com.route.news_app.databinding.FragmentNewsBinding
-import com.route.news_app.newsDetails.NewsDetailsActivity
-import com.route.news_app.newsResponse.News
-import com.route.news_app.sourcesResponse.Source
+import com.route.news_app.ui.newsDetails.NewsDetailsActivity
 
 class NewsFragment : Fragment() {
 
