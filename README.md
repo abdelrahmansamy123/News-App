@@ -6,10 +6,10 @@ Kotlin-based Android news app helps users stay up-to-date on the latest headline
 Display News in various categories
 Browse news
 ## **Tools and Tech stack used : **
-Kotlin
+Kotlin(https://kotlinlang.org/)
 XML
 MVVM Architecture
 Room database library
 Android Studio
-Third party libraries like @retrofit, glid.
+Third party libraries like retrofit, glid.
 
