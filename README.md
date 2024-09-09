@@ -1,6 +1,6 @@
 ## **News App**📰
 
 Project Title is a description of the project and its purpose.
-## **Introduction**
+## **Overview**
 
-Project Title is a project that does something useful. It was created to solve a particular problem, and it provides a solution that is better than the alternatives.
+Kotlin-based Android news app helps users stay up-to-date on the latest headlines.
