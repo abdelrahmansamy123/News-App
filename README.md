@@ -5,7 +5,7 @@ Kotlin-based Android news app helps users stay up-to-date on the latest headline
 ## **Features :**
 Display News in various categories
 Browse news
-## **Tools and Tech stack used : **
+## 🛠**Tools and Tech stack used :**
 - [Kotlin](https://kotlinlang.org/)
 - [XML](https://developer.android.com/guide/topics/resources/providing-resources)
 - [Navigation Component](https://developer.android.com/guide/navigation)
