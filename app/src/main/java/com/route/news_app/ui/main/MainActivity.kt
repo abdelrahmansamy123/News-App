@@ -63,8 +63,7 @@ class MainActivity : AppCompatActivity() , CategoriesFragment.OnCategoryClickLis
     fun showCategoryDetailsFragment(category: Category){
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container,
-                CategoryDetailsFragment.getInstance(category))
+            .replace(R.id.fragment_container, CategoryDetailsFragment.getInstance(category))
             .addToBackStack(null)
             .commit()
     }

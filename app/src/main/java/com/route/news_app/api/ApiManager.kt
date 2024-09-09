@@ -13,8 +13,8 @@ class ApiManager {
         @Synchronized
         fun getInstance(): Retrofit {
             if (retrofit == null) {
-                val loggingInterceptor = HttpLoggingInterceptor{
-                    Log.e("api",it)
+                val loggingInterceptor = HttpLoggingInterceptor {
+                    Log.e("api", it)
                 }
 
                 loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY

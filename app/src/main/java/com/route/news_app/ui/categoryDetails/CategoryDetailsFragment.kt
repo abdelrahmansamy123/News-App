@@ -21,19 +21,14 @@ class CategoryDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentDetailsCategoryBinding.inflate(
-            inflater, container, false
-        )
+        viewBinding = FragmentDetailsCategoryBinding.inflate(inflater, container, false)
         return viewBinding.root
 
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         viewModel = ViewModelProvider(this).get(CategoryDetailsViewModel::class.java)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,9 +38,7 @@ class CategoryDetailsFragment : Fragment() {
     }
 
     fun subscribeToLivedata() {
-        viewModel.sourcesLivedata.observe(
-            viewLifecycleOwner
-        ) {
+        viewModel.sourcesLivedata.observe(viewLifecycleOwner) {
             bindSourcesInTabLayout(it)
         }
         viewModel.showLoadingLayout.observe(viewLifecycleOwner) { show ->
