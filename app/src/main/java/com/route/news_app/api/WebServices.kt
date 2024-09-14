@@ -14,7 +14,10 @@ interface WebServices {
 
     @GET("v2/everything")
     suspend fun getNews(
-        @Query("apiKey") apiKey: String, @Query("sources") sources: String,
-        @Query("pageSize") pageSize: Int, @Query("page") page: Int,
+        @Query("apiKey") apiKey: String,
+        @Query("sources") sources: String,
+        @Query("pageSize") pageSize: Int,
+        @Query("page") page: Int,
     ): NewsResponse
+
 }
