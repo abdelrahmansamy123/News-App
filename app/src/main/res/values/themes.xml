@@ -3,12 +3,23 @@
     <style name="Theme.News_App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/green</item>
-        <item name="colorPrimaryVariant">@color/dark_green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="textView_style">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="modeImage">
+        <item name="android:src">@drawable/ic_light_mode</item>
+    </style>
+
+    <style name="modeText">
+        <item name="android:text">@string/light_mode</item>
+    </style>
 
 </resources>

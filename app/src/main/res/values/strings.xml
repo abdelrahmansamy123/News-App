@@ -2,4 +2,18 @@
     <string name="app_name">News_App</string>
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">close</string>
+    <string name="categories" translatable="false">Categories</string>
+    <string name="settings" translatable="false">Settings</string>
+    <string name="language" translatable="false">Language</string>
+    <string name="mode" translatable="false">Mode</string>
+    <string name="light_mode" translatable="false">Light Mode</string>
+    <string name="dark_mode" translatable="false">Dark Mode</string>
+    <string name="choose_category" translatable="false">Choose a Category</string>
+    <string name="sports" translatable="false">Sports</string>
+    <string name="general" translatable="false">General</string>
+    <string name="health" translatable="false">Health</string>
+    <string name="tech" translatable="false">Technology</string>
+    <string name="business" translatable="false">Business</string>
+    <string name="science" translatable="false">Science</string>
+    <string name="view_full_article" translatable="false">View full article</string>
 </resources>
