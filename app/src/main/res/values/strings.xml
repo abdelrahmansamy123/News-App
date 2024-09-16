@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">News_App</string>
+    <string name="app_name" translatable="false">News App</string>
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">close</string>
     <string name="categories" translatable="false">Categories</string>
@@ -16,4 +16,15 @@
     <string name="business" translatable="false">Business</string>
     <string name="science" translatable="false">Science</string>
     <string name="view_full_article" translatable="false">View full article</string>
+
+    <string-array name="languages">
+        <item>Select Language</item>
+        <item>English</item>
+        <item>Arabic</item>
+    </string-array>
+
+    <array name="mode">
+        <item>Dark</item>
+        <item>Light</item>
+    </array>
 </resources>
