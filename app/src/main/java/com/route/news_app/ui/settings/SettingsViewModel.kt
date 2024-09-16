@@ -11,7 +11,9 @@ class SettingsViewModel : ViewModel() {
     private val _enableDarkTheme = MutableLiveData<Boolean>()
     val enableDarkTheme = _enableDarkTheme
     fun checkTheme(resources: Resources?) {
-        _enableDarkTheme.postValue(resources?.configuration!!.uiMode and Configuration.UI_MODE_NIGHT_MASK != Configuration.UI_MODE_NIGHT_NO)
+        _enableDarkTheme.postValue(
+            resources?.configuration!!.uiMode and Configuration.UI_MODE_NIGHT_MASK != Configuration.UI_MODE_NIGHT_NO
+        )
     }
 
     fun changeTheme(resources: Resources?) {

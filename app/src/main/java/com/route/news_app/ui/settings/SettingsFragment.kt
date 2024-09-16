@@ -1,6 +1,6 @@
 package com.route.news_app.ui.settings
 
-import android.R
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.route.news_app.R
 import com.route.news_app.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
@@ -51,9 +52,12 @@ class SettingsFragment : Fragment() {
     }
 
     private fun changeLanguage() {
-        val languages: Array<String> = resources.getStringArray(R.array.emailAddressTypes)
+        val languages: Array<String> = resources.getStringArray(R.array.languages)
         val adapter =
-            ArrayAdapter<String>(requireContext(), R.layout.simple_spinner_item, languages)
+            ArrayAdapter<String>(
+                requireContext(),
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, languages
+            )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         viewBinding.languageSpinner.adapter = adapter
