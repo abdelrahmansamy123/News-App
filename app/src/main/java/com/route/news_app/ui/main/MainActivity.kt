@@ -11,19 +11,21 @@ import com.route.news_app.ui.categories.CategoriesFragment
 import com.route.news_app.ui.categories.Category
 import com.route.news_app.ui.categoryDetails.CategoryDetailsFragment
 import com.route.news_app.ui.settings.SettingsFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class MainActivity : AppCompatActivity() , CategoriesFragment.OnCategoryClickListener{
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity(), CategoriesFragment.OnCategoryClickListener {
     override fun onCategoryClick(category: Category) {
         showCategoryDetailsFragment(category)
     }
+
     lateinit var viewBinding: ActivityMainBinding
     val categoriesFragment = CategoriesFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-    //    viewBinding = ActivityMainBinding.inflate(layoutInflater)
-    //    setContentView(viewBinding.root)
+        viewBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        //    viewBinding = ActivityMainBinding.inflate(layoutInflater)
+        //    setContentView(viewBinding.root)
 
         val toggle = ActionBarDrawerToggle(
             this, viewBinding.drawer, viewBinding.toolbar,
@@ -32,12 +34,13 @@ class MainActivity : AppCompatActivity() , CategoriesFragment.OnCategoryClickLis
         )
         viewBinding.drawer.addDrawerListener(toggle)
         toggle.syncState()
-        viewBinding.navView.setNavigationItemSelectedListener { item->
-            when(item.itemId){
-                R.id.nav_categories->{
+        viewBinding.navView.setNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_categories -> {
                     showCategoriesFragment()
                 }
-                R.id.nav_settings->{
+
+                R.id.nav_settings -> {
                     showSettingsFragment()
                 }
             }
@@ -48,23 +51,28 @@ class MainActivity : AppCompatActivity() , CategoriesFragment.OnCategoryClickLis
         categoriesFragment.onCategoryClickListener = this
         showCategoriesFragment()
     }
-    fun showSettingsFragment(){
+
+    fun showSettingsFragment() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, SettingsFragment())
             .commit()
     }
-    fun showCategoriesFragment(){
+
+    fun showCategoriesFragment() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, categoriesFragment)
             .commit()
     }
-    fun showCategoryDetailsFragment(category: Category){
+
+    fun showCategoryDetailsFragment(category: Category) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container,
-                CategoryDetailsFragment.getInstance(category))
+            .replace(
+                R.id.fragment_container,
+                CategoryDetailsFragment.getInstance(category)
+            )
             .addToBackStack(null)
             .commit()
     }

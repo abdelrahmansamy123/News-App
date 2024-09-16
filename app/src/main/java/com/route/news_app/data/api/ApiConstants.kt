@@ -1,4 +1,4 @@
-package com.route.news_app.api
+package com.route.news_app.data.api
 
 class ApiConstants {
     companion object{

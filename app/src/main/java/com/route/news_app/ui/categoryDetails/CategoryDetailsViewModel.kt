@@ -4,24 +4,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
-import com.route.news_app.api.ApiManager
-import com.route.news_app.api.model.sourcesResponse.Source
-import com.route.news_app.api.model.sourcesResponse.SourcesResponse
-import com.route.news_app.repositories.source.SourcesRemoteDataSourceImpl
-import com.route.news_app.repositories.source.SourcesRepositoryImpl
-import com.route.news_app.repositoriesContract.source.SourcesRepository
+import com.route.news_app.data.api.model.sourcesResponse.Source
+import com.route.news_app.data.api.model.sourcesResponse.SourcesResponse
+import com.route.news_app.repository.source.SourcesRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
+import javax.inject.Inject
 
-class CategoryDetailsViewModel : ViewModel() {
+@HiltViewModel
+class CategoryDetailsViewModel @Inject constructor(val sourcesRepository: SourcesRepository) :
+    ViewModel() {
 
     val sourcesLivedata = MutableLiveData<List<Source?>?>()
     val showLoadingLayout = MutableLiveData<Boolean>()
     val showErrorLayout = MutableLiveData<String>()
-    val webServices = ApiManager.getApis()
-    val sourcesDataSource = SourcesRemoteDataSourceImpl(webServices)
-    val sourcesRepository: SourcesRepository =
-        SourcesRepositoryImpl(sourcesDataSource)
+
 
     fun loadNewsSources(categoryId: String) {
         viewModelScope.launch {
@@ -42,35 +40,6 @@ class CategoryDetailsViewModel : ViewModel() {
             } catch (e: Exception) {
                 showErrorLayout.value = e.localizedMessage ?: ""
             }
-
         }
-
-//            .enqueue(object : Callback<SourcesResponse> {
-//                override fun onResponse(
-//                    call: Call<SourcesResponse>, response: Response<SourcesResponse>
-//                ) {
-//                    showLoadingLayout.value = false
-//                    //   viewBinding.loadingIndicator.isVisible = false
-//                    if (response.isSuccessful) {
-//                        // we have data
-//                        sourcesLivedata.value = response.body()?.sources
-//                    } else {
-//                        val gson = Gson()
-//                        val errorResponse = gson.fromJson(
-//                            response.errorBody()?.string(), SourcesResponse::class.java
-//                        )
-//
-//                        showErrorLayout.value = errorResponse.message ?: ""
-//                    }
-//
-//                    //                    response.body().sources
-//                }
-//
-//                override fun onFailure(call: Call<SourcesResponse>, t: Throwable) {
-//                    showLoadingLayout.value = false
-//                    showErrorLayout.value = t.localizedMessage ?: ""
-//
-//                }
-//            })
     }
 }

@@ -2,28 +2,30 @@ package com.route.news_app.ui.categories
 
 import com.route.news_app.R
 
-data class Category (val id:String,
-                     val name:String,
-                     val imageId:Int,
-                     val backgroundColorId:Int){
-    companion object{
-        fun getCategoriesList():List<Category>{
+data class Category(
+    val id: String,
+    val name: String,
+    val imageId: Int,
+    val backgroundColorId: Int
+) {
+    companion object {
+        fun getCategoriesList(): List<Category> {
             return listOf(
 
                 Category(
-                        id ="sports",
-                        name = "Sports",
-                        imageId = R.drawable.sport,
-                        backgroundColorId = R.color.red
+                    id = "sports",
+                    name = "Sports",
+                    imageId = R.drawable.sport,
+                    backgroundColorId = R.color.red
                 ),
                 Category(
-                    id ="entertainment",
+                    id = "entertainment",
                     name = "Entertainment",
                     imageId = R.drawable.politics,
                     backgroundColorId = R.color.blue
                 ),
                 Category(
-                    id ="health",
+                    id = "health",
                     name = "Health",
                     imageId = R.drawable.health,
                     backgroundColorId = R.color.pink

@@ -8,16 +8,19 @@ import androidx.fragment.app.Fragment
 import com.route.news_app.databinding.FragmentCategoriesBinding
 
 class CategoriesFragment : Fragment() {
-    lateinit var viewBinding : FragmentCategoriesBinding
+    lateinit var viewBinding: FragmentCategoriesBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentCategoriesBinding.inflate(inflater,
-        container,false)
+        viewBinding = FragmentCategoriesBinding.inflate(
+            inflater,
+            container, false
+        )
         return viewBinding.root
     }
+
     val adapter = CategoriesRecyclerAdapter(Category.getCategoriesList())
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,7 +33,8 @@ class CategoriesFragment : Fragment() {
     }
 
     var onCategoryClickListener: OnCategoryClickListener? = null
-    interface OnCategoryClickListener{
+
+    interface OnCategoryClickListener {
         fun onCategoryClick(category: Category)
     }
 }

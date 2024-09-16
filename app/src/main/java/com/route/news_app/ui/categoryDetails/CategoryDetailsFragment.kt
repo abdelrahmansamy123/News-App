@@ -7,17 +7,19 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayout
 import com.route.news_app.R
-import com.route.news_app.api.model.sourcesResponse.Source
+import com.route.news_app.data.api.model.sourcesResponse.Source
 import com.route.news_app.databinding.FragmentDetailsCategoryBinding
 import com.route.news_app.ui.categories.Category
 import com.route.news_app.ui.news.NewsFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CategoryDetailsFragment : Fragment() {
     lateinit var viewBinding: FragmentDetailsCategoryBinding
-    lateinit var viewModel: CategoryDetailsViewModel
+    private val viewModel: CategoryDetailsViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -30,10 +32,6 @@ class CategoryDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-        viewModel = ViewModelProvider(this).get(CategoryDetailsViewModel::class.java)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -95,27 +93,28 @@ class CategoryDetailsFragment : Fragment() {
             tab.view.layoutParams = layoutParams
         }
         viewBinding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-                override fun onTabReselected(tab: TabLayout.Tab?) {
-                    val source = tab?.tag as Source
-                    changeNewsFragment(source)
-                }
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                val source = tab?.tag as Source
+                changeNewsFragment(source)
+            }
 
-                override fun onTabSelected(tab: TabLayout.Tab?) {
-                    val source = tab?.tag as Source
-                    changeNewsFragment(source)
-                }
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                val source = tab?.tag as Source
+                changeNewsFragment(source)
+            }
 
-                override fun onTabUnselected(tab: TabLayout.Tab?) {
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
 
-                }
+            }
 
-            })
+        })
         viewBinding.tabLayout.getTabAt(0)?.select()
 
     }
 
     lateinit var category: Category
-    companion object{
+
+    companion object {
         fun getInstance(category: Category): CategoryDetailsFragment {
             val fragment = CategoryDetailsFragment()
             fragment.category = category

@@ -7,7 +7,7 @@
 
         <variable
             name="news"
-            type="com.route.news_app.api.model.newsResponse.News" />
+            type="com.route.news_app.data.api.model.newsResponse.News" />
 
     </data>
 
