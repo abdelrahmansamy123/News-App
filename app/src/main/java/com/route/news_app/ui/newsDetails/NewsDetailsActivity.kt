@@ -19,4 +19,6 @@ class NewsDetailsActivity : AppCompatActivity() {
         news = ((intent.getSerializableExtra("news") as? News)!!)
         binding.news = news
     }
+
+
 }
