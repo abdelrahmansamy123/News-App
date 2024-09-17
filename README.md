@@ -2,9 +2,7 @@
 A news app made with Kotlin in Android. [NewsAPI](https://newsapi.org/) is used for this app.
 ## **Overview :**
 Kotlin-based Android news app helps users stay up-to-date on the latest headlines.
-## **Features :**
-Display News in various categories
-Browse news
+
 ## 🛠**Tools and Tech stack used :**
 - [Kotlin](https://kotlinlang.org/)
 - [XML](https://developer.android.com/guide/topics/resources/providing-resources)
