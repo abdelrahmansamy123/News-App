@@ -32,7 +32,8 @@ Kotlin-based Android news app helps users stay up-to-date on the latest headline
   <img src="https://github.com/user-attachments/assets/f6b6f9fb-eb79-482c-85f8-57aa9ec90363" width="250" />
 </p>
 
-### Article
+### Article | Settings
 <p align="center">
   <img src="https://github.com/user-attachments/assets/b3344ec3-2965-439a-9a06-ae8b1efd2f2f" width="250" />
+  <img src="https://github.com/user-attachments/assets/4f890baf-a5c9-463e-97f4-8606c05b14d1" width="250" />
 </p>
