@@ -19,3 +19,4 @@ Browse news
 - [Hilt](https://dagger.dev/hilt/)
 - [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
 - [Repository Pattern](https://developer.android.com/topic/libraries/architecture#recommended)
+
