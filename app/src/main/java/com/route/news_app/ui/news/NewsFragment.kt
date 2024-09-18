@@ -1,15 +1,17 @@
 package com.route.news_app.ui.news
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.route.news_app.data.api.model.newsResponse.News
 import com.route.news_app.data.api.model.sourcesResponse.Source
 import com.route.news_app.databinding.FragmentNewsBinding
+import com.route.news_app.ui.newsDetails.NewsDetailsActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -24,15 +26,17 @@ class NewsFragment : Fragment() {
         }
     }
 
+    var PAGE_SIZE = 20
+    var currentPage = 1
+    var isLoading = false
     lateinit var source: Source
-
     lateinit var viewBinding: FragmentNewsBinding
-    val viewModel: NewsViewModel by viewModels()
-    var loading = false
+    lateinit var viewModel: NewsViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -47,8 +51,9 @@ class NewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
-        viewModel.getNews(source.id ?: "");
+        getNews()
         subscribeToLivedata()
+        intentToNewsDetails()
 
     }
 
@@ -58,6 +63,21 @@ class NewsFragment : Fragment() {
     private fun initRecyclerView() {
         viewBinding.newsRecycler.adapter = newsAdapter
 
+    }
+
+    private fun getNews() {
+        viewModel.getNews(source.id ?: "")
+        isLoading = false
+    }
+
+    private fun intentToNewsDetails() {
+        newsAdapter.onNewsClick = object : OnNewsClick {
+            override fun onItemClick(news: News?) {
+                val intent = Intent(requireContext(), NewsDetailsActivity::class.java)
+                intent.putExtra("news", news)
+                startActivity(intent)
+            }
+        }
     }
 
 
@@ -75,7 +95,6 @@ class NewsFragment : Fragment() {
                 hideLoadingLayout()
         }
     }
-
 
     private fun bindNewsList(articles: List<News?>?) {
         // show news in recycler view

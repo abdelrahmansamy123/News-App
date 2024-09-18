@@ -16,7 +16,7 @@ class NewsDetailsActivity : AppCompatActivity() {
         binding = ActivityNewsDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        news = ((intent.getSerializableExtra("news") as? News)!!)
+        news = intent.getParcelableExtra<News>("news")!!
         binding.news = news
     }
 

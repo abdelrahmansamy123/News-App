@@ -9,7 +9,6 @@ import com.route.news_app.databinding.ItemNewsBinding
 class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     var onNewsClick: OnNewsClick? = null
-
     class ViewHolder(val viewBinding: ItemNewsBinding) : RecyclerView.ViewHolder(viewBinding.root) {
         fun bind(news: News?) {
             viewBinding.news = news
@@ -20,8 +19,7 @@ class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.Vi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewBinding = ItemNewsBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent, false
+            LayoutInflater.from(parent.context), parent, false
         )
         return ViewHolder(viewBinding)
     }
@@ -43,7 +41,10 @@ class NewsAdapter(var items: List<News?>?) : RecyclerView.Adapter<NewsAdapter.Vi
         notifyDataSetChanged()
 
     }
+
+
 }
+
 
 interface OnNewsClick {
 

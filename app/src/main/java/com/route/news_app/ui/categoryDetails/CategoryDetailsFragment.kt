@@ -88,8 +88,10 @@ class CategoryDetailsFragment : Fragment() {
             tab.tag = sources
             viewBinding.tabLayout.addTab(tab)
             val layoutParams = LinearLayout.LayoutParams(tab.view.layoutParams)
-            layoutParams.marginEnd = 12
-            layoutParams.marginStart = 12
+            layoutParams.marginEnd = 16
+            layoutParams.marginStart = 20
+            layoutParams.topMargin = 25
+            layoutParams.bottomMargin = 20
             tab.view.layoutParams = layoutParams
         }
         viewBinding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
