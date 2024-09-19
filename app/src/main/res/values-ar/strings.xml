@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">برنامج الاخبار</string>
+    <string name="language">اللغة</string>
+    <string name="mode">الوضع</string>
+    <string name="light_mode">الوضع المشرق</string>
+    <string name="dark_mode">الوضع الداكن</string>
+    <string name="choose_category">اختر احد المواضيع</string>
+    <string name="sports">رياضة</string>
+    <string name="entertainment">ترفيه</string>
+    <string name="health">صحة</string>
+    <string name="tech">تكنولوجيا</string>
+    <string name="business">أعمال</string>
+    <string name="science">علوم</string>
+    <string name="view_full_article">عرض المقال كاملا</string>
+    <string name="categories">المواضيع</string>
+    <string name="settings">اللاعدادات</string>
+    <string name="news_app">برنامج الاخبار</string>
+    <string name="pick_your_category_of_interest">اختر فئة اهتمامك</string>
+</resources>

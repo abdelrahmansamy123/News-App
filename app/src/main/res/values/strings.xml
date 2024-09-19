@@ -1,21 +1,23 @@
 <resources>
     <string name="app_name" translatable="false">News App</string>
-    <string name="navigation_drawer_open">open</string>
-    <string name="navigation_drawer_close">close</string>
-    <string name="categories" translatable="false">Categories</string>
-    <string name="settings" translatable="false">Settings</string>
+    <string name="navigation_drawer_open" translatable="false">open</string>
+    <string name="navigation_drawer_close" translatable="false">close</string>
     <string name="language" translatable="false">Language</string>
     <string name="mode" translatable="false">Mode</string>
     <string name="light_mode" translatable="false">Light Mode</string>
     <string name="dark_mode" translatable="false">Dark Mode</string>
     <string name="choose_category" translatable="false">Choose a Category</string>
     <string name="sports" translatable="false">Sports</string>
-    <string name="general" translatable="false">General</string>
+    <string name="entertainment" translatable="false">Entertainment</string>
     <string name="health" translatable="false">Health</string>
     <string name="tech" translatable="false">Technology</string>
     <string name="business" translatable="false">Business</string>
     <string name="science" translatable="false">Science</string>
     <string name="view_full_article" translatable="false">View full article</string>
+    <string name="categories" translatable="false">Categories</string>
+    <string name="settings" translatable="false">Settings</string>
+    <string name="news_app" translatable="false">News App</string>
+    <string name="pick_your_category_of_interest" translatable="false">pick your category of interest</string>
 
     <string-array name="languages">
         <item>Select Language</item>

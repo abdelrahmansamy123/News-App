@@ -4,7 +4,7 @@ import com.route.news_app.R
 
 data class Category(
     val id: String,
-    val name: String,
+    val name: Int,
     val imageId: Int,
     val backgroundColorId: Int
 ) {
@@ -14,37 +14,37 @@ data class Category(
 
                 Category(
                     id = "sports",
-                    name = "Sports",
+                    name = R.string.sports,
                     imageId = R.drawable.sport,
                     backgroundColorId = R.color.red
                 ),
                 Category(
                     id = "entertainment",
-                    name = "Entertainment",
+                    name = R.string.entertainment,
                     imageId = R.drawable.politics,
                     backgroundColorId = R.color.blue
                 ),
                 Category(
                     id = "health",
-                    name = "Health",
+                    name = R.string.health,
                     imageId = R.drawable.health,
                     backgroundColorId = R.color.pink
                 ),
                 Category(
                     id = "business",
-                    name = "Business",
+                    name = R.string.business,
                     imageId = R.drawable.business,
                     backgroundColorId = R.color.orange
                 ),
                 Category(
                     id = "technology",
-                    name = "Technology",
+                    name = R.string.tech,
                     imageId = R.drawable.enviroment,
                     backgroundColorId = R.color.babyBlue
                 ),
                 Category(
                     id = "science",
-                    name = "Science",
+                    name = R.string.science,
                     imageId = R.drawable.science,
                     backgroundColorId = R.color.yellow
                 ),
